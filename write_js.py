@@ -1,4 +1,4 @@
-/*
+script = r"""/*
  * ==========================================
  * AEGIS COGNITIVE RUNTIME PLATFORM
  * PROPRIETARY AND CONFIDENTIAL
@@ -274,3 +274,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+"""
+with open("script.js", "w", encoding="utf-8") as f:
+    f.write(script)
+print("script.js written with feminine animations")
