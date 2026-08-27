@@ -258,7 +258,7 @@ h1.outline {
     gap: 0.4rem;
 }
 
-.contact-item .label i {
+.contact-item .label .lucide {
     width: 14px;
     height: 14px;
 }
@@ -353,9 +353,9 @@ section {
     gap: 0.4rem;
 }
 
-.timeline-meta .date i {
-    width: 14px;
-    height: 14px;
+.timeline-meta .date .lucide {
+    width: 16px;
+    height: 16px;
 }
 
 .timeline-meta .company {
@@ -413,9 +413,9 @@ section {
     box-shadow: 0 4px 15px rgba(196, 140, 126, 0.08);
 }
 
-.project-handle i {
-    width: 18px;
-    height: 18px;
+.project-handle .lucide {
+    width: 16px;
+    height: 16px;
     color: var(--color-accent);
 }
 
@@ -468,7 +468,7 @@ section {
     margin-bottom: 0.5rem;
     font-weight: 600;
 }
-.edu-item .date i {
+.edu-item .date .lucide {
     width: 14px;
     height: 14px;
 }
@@ -497,7 +497,7 @@ section {
     align-items: center;
     gap: 0.5rem;
 }
-.skill-category h3 i {
+.skill-category h3 .lucide {
     color: var(--color-accent);
     width: 18px;
     height: 18px;
@@ -606,4 +606,11 @@ section {
     .profile-text {
         padding-top: 10px;
     }
+}
+
+/* Fix Lucide Icon Alignment */
+.lucide {
+    display: inline-block;
+    vertical-align: -0.125em;
+    flex-shrink: 0;
 }
