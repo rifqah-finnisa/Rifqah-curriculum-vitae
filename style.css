@@ -9,15 +9,15 @@
 
 :root {
     /* Feminine & Neat Palette */
-    --color-bg: #faf8f5;
-    --color-bg-alt: #fcf8f7; /* Soft blush cream */
-    --color-text-primary: #2d2a29;
+    --color-bg: #fdfaf6;
+    --color-bg-alt: #fbf5f3; /* Soft blush cream */
+    --color-text-primary: #4a3e3c;
     --color-text-secondary: #5c5553;
     --color-text-tertiary: #9c918e;
-    --color-accent: #c48c7e; /* Rose gold / soft copper */
+    --color-accent: #d29b8c; /* Rose gold / soft copper */
     
     --font-sans: 'Inter', sans-serif;
-    --font-display: 'Syne', sans-serif;
+    --font-display: 'Playfair Display', serif;
     
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
@@ -199,6 +199,8 @@ section {
 }
 
 .section-title {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
     font-size: 3rem;
     line-height: 1.1;
     margin-bottom: var(--spacing-lg);
@@ -321,6 +323,8 @@ section {
 }
 
 .section-title {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
     font-size: clamp(2.5rem, 5vw, 4.5rem);
     margin-bottom: var(--spacing-lg);
     line-height: 1;
