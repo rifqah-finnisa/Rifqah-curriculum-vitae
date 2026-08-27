@@ -36,16 +36,20 @@ document.addEventListener("DOMContentLoaded", () => {
         if (Math.abs(e.clientX - lastX) < 8 && Math.abs(e.clientY - lastY) < 8) return;
         lastX = e.clientX; lastY = e.clientY;
         const dot = document.createElement("div");
+        const s = 6 + Math.random() * 8; 
         dot.style.cssText = `
             position:fixed;pointer-events:none;z-index:9998;
-            width:${5+Math.random()*6}px;height:${5+Math.random()*6}px;
-            border-radius:50%;left:${e.clientX}px;top:${e.clientY}px;
+            width:${s}px;height:${s}px;
+            border-radius:${Math.random()>0.5?"50%":"50% 0 50% 0"};
+            left:${e.clientX}px;top:${e.clientY}px;
             background:${sparkleColors[Math.floor(Math.random()*sparkleColors.length)]};
-            transform:translate(-50%,-50%);opacity:0.85;`;
+            transform:translate(-50%,-50%);opacity:0.85;
+            box-shadow: 0 0 10px rgba(255,255,255,0.5);`;
         document.body.appendChild(dot);
         gsap.to(dot, {
-            y: -(20+Math.random()*30), x:(Math.random()-0.5)*20,
-            opacity:0, scale:0.3, duration:0.8+Math.random()*0.4,
+            y: -(30+Math.random()*50), x:(Math.random()-0.5)*40,
+            opacity:0, scale:0, duration:1 + Math.random()*0.5,
+            rotation:Math.random()*360,
             ease:"power2.out", onComplete:()=>dot.remove()
         });
     });
