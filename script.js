@@ -343,4 +343,87 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     );
 
+    // ════════════════════════════════════════
+    // PHOTO BREAK — Cinematic Parallax (photo_beach)
+    // ════════════════════════════════════════
+    const photoBreak = document.querySelector(".photo-break");
+    if (photoBreak) {
+        const imgWrap = photoBreak.querySelector(".photo-break-img-wrap");
+
+        // Parallax: image moves slower than scroll = depth effect
+        gsap.to(imgWrap, {
+            yPercent: -20,
+            ease: "none",
+            scrollTrigger: {
+                trigger: photoBreak,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 1.2
+            }
+        });
+
+        // Quote fades in from below as you enter the section
+        gsap.fromTo(".photo-quote",
+            { y: 40, opacity: 0, scale: 0.97 },
+            {
+                y: 0, opacity: 1, scale: 1,
+                duration: 1.2, ease: "power3.out",
+                scrollTrigger: {
+                    trigger: photoBreak,
+                    start: "top 65%",
+                    end: "top 20%",
+                    toggleActions: "play none none reverse"
+                }
+            }
+        );
+
+        // Subtle zoom on scroll (Ken Burns feel)
+        gsap.fromTo(imgWrap.querySelector("img"),
+            { scale: 1.08 },
+            {
+                scale: 1,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: photoBreak,
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: 2
+                }
+            }
+        );
+    }
+
+    // ════════════════════════════════════════
+    // FOOTER ACCENT PHOTO — Float up on enter
+    // ════════════════════════════════════════
+    const footerPhoto = document.querySelector(".photo-footer-img");
+    if (footerPhoto) {
+        gsap.fromTo(footerPhoto,
+            { y: 60, opacity: 0, scale: 0.94 },
+            {
+                y: 0, opacity: 1, scale: 1,
+                duration: 1.4, ease: "power4.out",
+                scrollTrigger: {
+                    trigger: ".photo-footer-accent",
+                    start: "top 90%",
+                    end: "top 50%",
+                    toggleActions: "play none none reverse"
+                }
+            }
+        );
+
+        // Gentle float on scroll
+        gsap.to(footerPhoto, {
+            yPercent: -15,
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".photo-footer-accent",
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 1.5
+            }
+        });
+    }
+
+
 });
