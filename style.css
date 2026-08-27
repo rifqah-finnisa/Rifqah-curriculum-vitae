@@ -1289,7 +1289,7 @@ section + section::before,
     height: 100%;
     object-fit: cover;
     object-position: center 30%;
-    opacity: 0.15;
+    opacity: 0.22;
     mix-blend-mode: multiply;
 }
 
@@ -1436,7 +1436,7 @@ img {
     height: 100%;
     object-fit: cover;
     object-position: center 30%;
-    opacity: 0.15;
+    opacity: 0.22;
     mix-blend-mode: multiply;
 }
 
