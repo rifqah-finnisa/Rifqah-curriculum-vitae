@@ -9,7 +9,7 @@
 
 :root {
     /* Feminine & Neat Palette */
-    --color-bg: #ffffff;
+    --color-bg: #faf8f5;
     --color-bg-alt: #fcf8f7; /* Soft blush cream */
     --color-text-primary: #2d2a29;
     --color-text-secondary: #5c5553;
@@ -88,7 +88,6 @@ h1, h2, h3, h4 {
     height: 100%;
     object-fit: cover;
     object-position: top center;
-    filter: brightness(1.05) contrast(1.05); /* Make it look fresh */
 }
 
 .overlay-gradient {
@@ -97,8 +96,8 @@ h1, h2, h3, h4 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, var(--color-bg) 0%, rgba(255, 255, 255, 0.9) 40%, rgba(255, 255, 255, 0) 100%),
-                linear-gradient(0deg, var(--color-bg) 0%, rgba(255, 255, 255, 0) 20%);
+    background: linear-gradient(90deg, var(--color-bg) 0%, rgba(250, 248, 245, 0.9) 40%, rgba(250, 248, 245, 0) 100%),
+                linear-gradient(0deg, var(--color-bg) 0%, rgba(250, 248, 245, 0) 20%);
 }
 
 .hero-content {
@@ -356,7 +355,7 @@ section {
     padding-left: 1.5rem;
 }
 .timeline-content ul li::before {
-    content: '?"';
+    content: '•';
     position: absolute;
     left: 0;
     color: var(--color-accent);
@@ -439,7 +438,7 @@ section {
     margin-bottom: 0.25rem;
 }
 .clean-list li::before {
-    content: '?';
+    content: '•';
     position: absolute;
     left: 0;
     color: var(--color-accent);
