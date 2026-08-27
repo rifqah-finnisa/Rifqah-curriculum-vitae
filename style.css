@@ -1019,3 +1019,175 @@ section + section::before,
     padding: 0 0 0.5rem;
     margin-top: -4rem;
 }
+
+/* ━━━━━━━━━━━━ PHOTO STRIP SECTION ━━━━━━━━━━━━ */
+#photo-gallery {
+    padding: 6rem 5% 5rem;
+    background: var(--bg);
+    overflow: hidden;
+}
+
+.photo-strip-section {
+    position: relative;
+}
+
+.photo-strip-label {
+    display: flex;
+    align-items: flex-end;
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.strip-tag {
+    font-family: var(--ff-serif);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--text-lite);
+    letter-spacing: 0.08em;
+    flex-shrink: 0;
+    padding-bottom: 0.3rem;
+}
+
+.strip-title {
+    font-family: var(--ff-head);
+    font-size: clamp(2rem, 5vw, 3.8rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    text-transform: uppercase;
+    color: var(--text);
+}
+
+.strip-title em {
+    font-family: var(--ff-serif);
+    font-style: italic;
+    font-weight: 400;
+    text-transform: none;
+    color: var(--accent);
+    font-size: 1.1em;
+}
+
+/* ── The actual photo layout ── */
+.photo-strip {
+    display: grid;
+    grid-template-columns: 1fr 0.65fr;
+    gap: 1.2rem;
+    max-height: 600px;
+    align-items: stretch;
+}
+
+.photo-strip-large {
+    height: 100%;
+}
+
+.photo-strip-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.photo-strip-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    flex: 1;
+    min-height: 0;
+}
+
+.photo-strip-large {
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+}
+
+.strip-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 15%;
+    display: block;
+    transition: transform 0.7s var(--ease);
+}
+
+.photo-strip-item:hover .strip-img,
+.photo-strip-large:hover .strip-img {
+    transform: scale(1.05);
+}
+
+/* Caption overlay on hover */
+.strip-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.2rem 1.2rem 1rem;
+    background: linear-gradient(to top, rgba(33,27,24,0.55) 0%, transparent 100%);
+    color: rgba(255,255,255,0.9);
+    font-family: var(--ff-serif);
+    font-style: italic;
+    font-size: 0.95rem;
+    letter-spacing: 0.06em;
+    font-weight: 300;
+    transform: translateY(4px);
+    opacity: 0;
+    transition: opacity 0.4s var(--ease), transform 0.4s var(--ease);
+}
+
+.photo-strip-item:hover .strip-caption,
+.photo-strip-large:hover .strip-caption {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ── Photo strip heights ── */
+.photo-strip {
+    height: 520px;
+}
+
+.photo-strip-right .photo-strip-item:first-child {
+    flex: 1.1;
+}
+
+/* ── Mobile photo strip ── */
+@media (max-width: 640px) {
+    #photo-gallery {
+        padding: 3.5rem 5% 3rem;
+    }
+
+    .photo-strip-label {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .photo-strip {
+        grid-template-columns: 1fr;
+        height: auto;
+        max-height: none;
+        gap: 0.8rem;
+    }
+
+    .photo-strip-large {
+        height: 70vw;
+    }
+
+    .photo-strip-right {
+        flex-direction: row;
+        gap: 0.8rem;
+    }
+
+    .photo-strip-right .photo-strip-item {
+        height: 45vw;
+        flex: 1;
+    }
+
+    .strip-caption {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .strip-img {
+        object-position: center 20%;
+    }
+}
