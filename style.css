@@ -721,34 +721,152 @@ section { padding: 7rem 7%; }
 
 .social-links a:hover { color: var(--accent); }
 
-/* ━━━━━━━━━━━━ RESPONSIVE ━━━━━━━━━━━━ */
+/* ━━━━━━━━━━━━ RESPONSIVE — TABLET ━━━━━━━━━━━━ */
 @media (max-width: 900px) {
+    section { padding: 5rem 6%; }
+
+    .hero-content { max-width: 100%; padding: 0 6%; }
+    .hero-image-container { width: 100%; opacity: 0.15; }
+    .overlay-gradient { background: rgba(242,240,235,0.82); }
+
+    .timeline-item { grid-template-columns: 1fr; gap: 1rem; }
+    .grid-section   { grid-template-columns: 1fr; gap: 3rem; }
+
+    h1.reveal-text { font-size: clamp(3rem, 12vw, 5rem); }
+    .contact-grid  { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+}
+
+/* ━━━━━━━━━━━━ RESPONSIVE — MOBILE ━━━━━━━━━━━━ */
+@media (max-width: 640px) {
+
+    /* ── Base spacing ── */
+    section { padding: 4rem 5%; }
+    .contact-section { padding: 4rem 5%; }
+    .footer { padding: 5rem 5% 3rem; }
+
+    /* ── Hero ── */
+    .hero {
+        align-items: center;
+        padding-bottom: 0;
+        min-height: 100svh;
+    }
     .hero-content {
         max-width: 100%;
-        padding: 0 6%;
+        padding: 0 5%;
+        margin-top: -5vh;
     }
-
     .hero-image-container {
         width: 100%;
-        opacity: 0.18;
+        height: 100%;
+        opacity: 0.12;
     }
-
     .overlay-gradient {
-        background: rgba(248,244,240,0.6);
+        background: rgba(242,240,235,0.88);
+    }
+    h1.reveal-text {
+        font-size: clamp(3rem, 15vw, 4.5rem);
+        line-height: 0.95;
+    }
+    .hero-roles {
+        font-size: 0.68rem;
+        letter-spacing: 0.18em;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+    }
+    .hero-bio {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+    .title-wrapper { margin-bottom: 1.2rem; }
+    .scroll-indicator { left: 5%; bottom: 1.8rem; }
+
+    /* ── Section titles ── */
+    .section-title {
+        font-size: clamp(1.7rem, 9vw, 2.4rem);
+        margin-bottom: 2.5rem;
+        padding-bottom: 1.2rem;
+    }
+    .section-title.small {
+        font-size: clamp(1.5rem, 8vw, 2rem);
     }
 
-    .timeline-item {
-        grid-template-columns: 1fr;
-        gap: 1rem;
+    /* ── Profile card ── */
+    .profile-showcase { border-radius: 10px; }
+    .profile-banner {
+        height: 160px;
+        object-position: left center;  /* avoid text clipping on right */
+    }
+    .profile-info {
+        padding: 0 1.2rem 1.8rem;
+        margin-top: -48px;
+    }
+    .profile-avatar {
+        width: 90px;
+        height: 90px;
+    }
+    .profile-text {
+        font-size: 1rem;
+        line-height: 1.8;
     }
 
-    .grid-section {
-        grid-template-columns: 1fr;
+    /* ── Contact grid ── */
+    .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.4rem 1.2rem;
+    }
+    /* LinkedIn (5th item) spans full width on mobile */
+    .contact-item:last-child {
+        grid-column: 1 / -1;
+        border-top: 1px solid rgba(192,126,114,0.15);
+        padding-top: 1rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    .contact-item:last-child .label { margin-bottom: 0; }
+    .contact-item .value { font-size: 1.1rem; }
+
+    /* ── Timeline ── */
+    .timeline {
         gap: 3rem;
     }
+    .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+        padding-top: 1.5rem;
+    }
+    .timeline-meta .company { font-size: 1.4rem; }
+    .timeline-content ul    { font-size: 0.9rem; }
+    .project-handle         { font-size: 0.82rem; padding: 0.55rem 0.9rem; }
 
-    h1.reveal-text {
-        font-size: clamp(3rem, 14vw, 5rem);
+    /* ── Gallery ── */
+    .experience-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+    .experience-gallery img { height: 150px; }
+
+    /* ── Education / Skills ── */
+    .grid-section { gap: 2.5rem; }
+    .edu-item h3  { font-size: 1.4rem; }
+
+    /* ── Footer ── */
+    .footer-line:first-child { font-size: clamp(1.2rem, 6vw, 2rem); }
+    .footer-big   { font-size: clamp(2.8rem, 14vw, 5rem); }
+    .footer-outline { font-size: clamp(1.5rem, 8vw, 2.5rem); }
+    .footer-title { margin-bottom: 2rem; }
+    .magnetic-btn {
+        padding: 1rem 2.5rem;
+        font-size: 0.72rem;
+        letter-spacing: 0.2em;
+    }
+
+    /* ── Ornament divider ── */
+    section + section::before,
+    .contact-section + section::before {
+        font-size: 0.85rem;
+        letter-spacing: 0.2em;
     }
 }
 
