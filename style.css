@@ -9,15 +9,15 @@
 
 /* === DESIGNER MIND OS v5.0 — EDITORIAL FEMININE AESTHETIC === */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Syne:wght@400;500;600;700;800&family=Inter:wght@200;300;400;500&display=swap');
 
 :root {
     /* Warm Editorial Palette — Feminine & Breathable */
     --bg:        #F2F0EC;       /* very warm cream, like old paper */
     --bg-alt:    #EAE4DF;       /* dusty blush */
     --bg-white:  #FAFAF8;       /* almost white, warm tint */
-    --text:      #211B18;       /* deep dark espresso */
-    --text-mid:  #6B5E58;       /* mid muted brown */
+    --text:      #1E1916;       /* deep dark espresso */
+    --text-mid:  #5E524D;       /* mid muted brown */
     --text-lite: #A8978F;       /* dusty warm gray */
     --accent:    #C07E72;       /* soft terracotta rose */
     --accent-lt: #E8C5BE;       /* blush pink */
@@ -143,14 +143,14 @@ h1.outline {
 .hero-roles {
     display: flex;
     align-items: center;
-    gap: 0.7rem;
+    gap: 0.8rem;
     font-family: var(--ff-body);
-    font-size: 0.85rem;
-    font-weight: 500;
-    letter-spacing: 0.18em;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
     color: var(--accent);
     text-transform: uppercase;
-    margin-bottom: 1.6rem;
+    margin-bottom: 1.8rem;
 }
 
 .hero-roles .dot {
@@ -162,12 +162,14 @@ h1.outline {
 
 /* Bio paragraph — small, light, readable */
 .hero-bio {
-    font-family: var(--ff-body);
-    font-size: 0.92rem;
+    font-family: var(--ff-serif);
+    font-size: 1.15rem;
     font-weight: 300;
+    font-style: italic;
     color: var(--text-mid);
-    line-height: 1.75;
+    line-height: 1.85;
     max-width: 320px;
+    letter-spacing: 0.01em;
 }
 
 /* Scroll indicator — bottom left */
@@ -239,13 +241,26 @@ section { padding: 7rem 7%; }
 /* ━━━━━━━━━━━━ SECTION TITLES ━━━━━━━━━━━━ */
 .section-title {
     font-family: var(--ff-head);
-    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-size: clamp(2rem, 4.5vw, 3.8rem);
     font-weight: 700;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.01em;
     line-height: 1.05;
     margin-bottom: 4rem;
     color: var(--text);
     text-transform: uppercase;
+    position: relative;
+    padding-bottom: 1.5rem;
+}
+
+/* Elegant thin line under section title */
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 48px;
+    height: 1.5px;
+    background: linear-gradient(to right, var(--accent), transparent);
 }
 
 .section-title.small {
@@ -259,8 +274,9 @@ section { padding: 7rem 7%; }
     font-style: italic;
     font-weight: 400;
     text-transform: none;
-    font-size: 1.1em;
-    letter-spacing: 0;
+    font-size: 1.15em;
+    letter-spacing: 0.01em;
+    display: inline-block;
 }
 
 /* ━━━━━━━━━━━━ PROFILE CARD ━━━━━━━━━━━━ */
@@ -309,14 +325,14 @@ section { padding: 7rem 7%; }
 }
 
 .profile-text {
-    max-width: 520px;
+    max-width: 540px;
     color: var(--text-mid);
-    font-size: 1rem;
     font-weight: 300;
-    line-height: 1.8;
+    line-height: 1.9;
     font-family: var(--ff-serif);
     font-style: italic;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    letter-spacing: 0.01em;
 }
 
 /* ━━━━━━━━━━━━ CONTACT GRID ━━━━━━━━━━━━ */
@@ -338,22 +354,24 @@ section { padding: 7rem 7%; }
 }
 
 .contact-item .label {
-    font-size: 0.72rem;
+    font-size: 0.68rem;
     text-transform: uppercase;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.2em;
     color: var(--text-lite);
-    font-weight: 500;
+    font-weight: 400;
     display: flex;
     align-items: center;
     gap: 0.35rem;
+    margin-bottom: 0.3rem;
 }
 
 .contact-item .value {
     font-family: var(--ff-serif);
-    font-size: 1.2rem;
-    font-weight: 500;
+    font-size: 1.25rem;
+    font-weight: 400;
     color: var(--text);
-    letter-spacing: 0.01em;
+    letter-spacing: 0.02em;
+    line-height: 1.3;
 }
 
 .link {
@@ -402,40 +420,54 @@ section { padding: 7rem 7%; }
     display: flex;
     align-items: center;
     gap: 0.4rem;
-    font-family: var(--ff-body);
-    font-size: 0.82rem;
-    font-weight: 500;
+    font-family: var(--ff-serif);
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: italic;
     color: var(--accent);
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
+    letter-spacing: 0.02em;
 }
 
 .timeline-meta .company {
     font-family: var(--ff-serif);
-    font-size: 1.6rem;
+    font-size: 1.75rem;
     font-weight: 500;
     line-height: 1.2;
     color: var(--text);
+    letter-spacing: 0.01em;
 }
 
 .timeline-content .role {
     font-family: var(--ff-body);
-    font-size: 0.82rem;
+    font-size: 0.78rem;
     font-weight: 600;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--text-mid);
+    color: var(--accent);
     margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.timeline-content .role::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 1.5px;
+    background: var(--accent);
+    flex-shrink: 0;
 }
 
 .timeline-content ul {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 0.55rem;
+    gap: 0.6rem;
     color: var(--text-mid);
     font-weight: 300;
-    font-size: 0.97rem;
+    font-size: 0.96rem;
+    line-height: 1.75;
 }
 
 .timeline-content ul li {
@@ -459,16 +491,19 @@ section { padding: 7rem 7%; }
 .project-handle {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.6rem;
     margin-top: 1.2rem;
-    padding: 0.6rem 1rem;
+    padding: 0.7rem 1.2rem;
     background: var(--bg-white);
     border-radius: 6px;
-    border-left: 3px solid var(--accent);
-    font-size: 0.88rem;
+    border-left: 2px solid var(--accent);
+    font-size: 0.85rem;
+    font-family: var(--ff-serif);
+    font-style: italic;
     color: var(--text-mid);
-    box-shadow: 0 3px 12px rgba(192,126,114,0.08);
+    box-shadow: 0 3px 16px rgba(192,126,114,0.08);
     font-weight: 400;
+    letter-spacing: 0.01em;
 }
 
 .project-handle svg {
@@ -528,18 +563,21 @@ section { padding: 7rem 7%; }
 
 .edu-item h3 {
     font-family: var(--ff-serif);
-    font-size: 1.7rem;
+    font-size: 1.8rem;
     font-weight: 500;
     color: var(--text);
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.25rem;
+    letter-spacing: 0.01em;
+    line-height: 1.2;
 }
 
 .edu-item p {
-    color: var(--text-mid);
-    font-size: 0.95rem;
+    color: var(--text-lite);
+    font-size: 1.1rem;
     font-weight: 300;
     font-style: italic;
     font-family: var(--ff-serif);
+    letter-spacing: 0.02em;
 }
 
 /* Skill Category */
@@ -552,12 +590,14 @@ section { padding: 7rem 7%; }
     align-items: center;
     gap: 0.5rem;
     font-family: var(--ff-body);
-    font-size: 0.8rem;
+    font-size: 0.72rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.22em;
     color: var(--text);
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid rgba(192,126,114,0.3);
 }
 
 .skill-category h3 svg {
@@ -569,13 +609,20 @@ section { padding: 7rem 7%; }
 .skill-category ul { list-style: none; }
 
 .skill-category ul li {
-    padding: 0.55rem 0;
+    padding: 0.6rem 0;
     border-bottom: 1px solid rgba(192,126,114,0.15);
     color: var(--text-mid);
-    font-size: 0.95rem;
-    font-weight: 300;
+    font-size: 1.12rem;
+    font-weight: 400;
     font-family: var(--ff-serif);
-    font-size: 1.1rem;
+    font-style: italic;
+    letter-spacing: 0.01em;
+    transition: color 0.3s, padding-left 0.3s;
+}
+
+.skill-category ul li:hover {
+    color: var(--accent);
+    padding-left: 0.5rem;
 }
 
 .skill-category ul li:last-child { border-bottom: none; }
@@ -608,15 +655,15 @@ section { padding: 7rem 7%; }
 /* CTA button — delicate feminine style */
 .magnetic-btn {
     display: inline-block;
-    padding: 1.1rem 3.2rem;
+    padding: 1.2rem 3.5rem;
     border: 1.5px solid var(--accent);
     background: transparent;
     color: var(--text);
     text-decoration: none;
     font-family: var(--ff-body);
-    font-size: 0.82rem;
+    font-size: 0.78rem;
     font-weight: 500;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.25em;
     text-transform: uppercase;
     border-radius: 100px;
     transition: all 0.4s var(--ease);
@@ -650,9 +697,12 @@ section { padding: 7rem 7%; }
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     color: var(--text-lite);
     font-weight: 300;
+    font-family: var(--ff-serif);
+    font-style: italic;
+    letter-spacing: 0.04em;
 }
 
 .social-links {
@@ -781,4 +831,19 @@ section { padding: 7rem 7%; }
     mix-blend-mode: multiply;
     opacity: 0;
     transition: opacity 0.1s;
+}
+
+/* ─── Elegant section ornament divider ─── */
+section + section::before,
+.contact-section + section::before {
+    content: '— ✦ —';
+    display: block;
+    text-align: center;
+    font-family: var(--ff-serif);
+    font-style: italic;
+    color: var(--accent-lt);
+    font-size: 1rem;
+    letter-spacing: 0.3em;
+    padding: 0 0 0.5rem;
+    margin-top: -4rem;
 }
