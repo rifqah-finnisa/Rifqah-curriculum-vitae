@@ -341,7 +341,26 @@ document.addEventListener("DOMContentLoaded", () => {
                 toggleActions: "play none none reverse"
             }
         }
-    );});
+    );
+
+    // ════════════════════════════════════════
+    // PHOTO BREAK — Cinematic Parallax (photo_beach)
+    // ════════════════════════════════════════
+    const photoBreak = document.querySelector(".photo-break");
+    if (photoBreak) {
+        const imgWrap = photoBreak.querySelector(".photo-break-img-wrap");
+
+        // Parallax: image moves slower than scroll = depth effect
+        gsap.to(imgWrap, {
+            yPercent: -20,
+            ease: "none",
+            scrollTrigger: {
+                trigger: photoBreak,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 1.2
+            }
+        });
 
         // Quote fades in from below as you enter the section
         gsap.fromTo(".photo-quote",
@@ -408,65 +427,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // ════════════════════════════════════════
-    // EDITORIAL PHOTO BREAK
+    // BEACH BG PARALLAX (MC Events Section)
     // ════════════════════════════════════════
-    const editorial = document.querySelector(".photo-editorial");
-    if (editorial) {
-        gsap.fromTo(editorial.querySelector(".photo-editorial-text"),
-            { x: -40, opacity: 0 },
-            {
-                x: 0, opacity: 1,
-                duration: 1.2, ease: "power3.out",
-                scrollTrigger: {
-                    trigger: editorial,
-                    start: "top 75%",
-                    toggleActions: "play none none reverse"
-                }
-            }
-        );
-        gsap.fromTo(editorial.querySelector(".photo-editorial-img"),
-            { x: 40, opacity: 0 },
-            {
-                x: 0, opacity: 1,
-                duration: 1.2, ease: "power3.out",
-                scrollTrigger: {
-                    trigger: editorial,
-                    start: "top 75%",
-                    toggleActions: "play none none reverse"
-                }
-            }
-        );
-        // Parallax image
-        gsap.to(editorial.querySelector("img"), {
-            yPercent: 15,
+    const beachBg = document.querySelector(".bg-parallax-img");
+    if (beachBg) {
+        gsap.to(beachBg, {
+            yPercent: 20,
             ease: "none",
             scrollTrigger: {
-                trigger: editorial,
+                trigger: ".photo-bg-section",
                 start: "top bottom",
                 end: "bottom top",
                 scrub: true
             }
         });
-    }
-
-    // ════════════════════════════════════════
-    // CONTACT BG PARALLAX
-    // ════════════════════════════════════════
-    const contactBg = document.querySelector(".contact-photo-bg img");
-    if (contactBg) {
-        gsap.fromTo(contactBg, 
-            { yPercent: -15 },
-            { 
-                yPercent: 15,
-                ease: "none",
-                scrollTrigger: {
-                    trigger: ".contact-section",
-                    start: "top bottom",
-                    end: "bottom top",
-                    scrub: true
-                }
-            }
-        );
     }
 
 });
