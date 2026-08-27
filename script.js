@@ -442,29 +442,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
-,
-            {
-                y: 0, opacity: 1, scale: 1,
-                duration: 1.4, ease: "power4.out",
-                scrollTrigger: {
-                    trigger: eduPhoto,
-                    start: "top 85%",
-                    toggleActions: "play none none reverse"
-                }
-            }
-        );
-        // Parallax
-        gsap.to(eduPhoto.querySelector(".photo-pill-wrapper"), {
-            yPercent: -10,
-            ease: "none",
-            scrollTrigger: {
-                trigger: eduPhoto,
-                start: "top bottom",
-                end: "bottom top",
-                scrub: true
-            }
-        });
-    }
 
     // ════════════════════════════════════════
     // EDUCATION PHOTO FADE
