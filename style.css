@@ -1288,7 +1288,7 @@ section + section::before,
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 40%;
+    object-position: right 85%;
     opacity: 0.5; /* Bright and soft, letting cream background lighten it */
     /* mix-blend-mode removed to keep natural colors */
 }
@@ -1435,7 +1435,7 @@ img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 40%;
+    object-position: right 85%;
     opacity: 0.5; /* Bright and soft, letting cream background lighten it */
     /* mix-blend-mode removed to keep natural colors */
 }
