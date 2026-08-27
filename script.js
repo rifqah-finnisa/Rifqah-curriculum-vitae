@@ -496,4 +496,24 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // ════════════════════════════════════════
+    // UNIFIED BG PARALLAX (Contact + MC Events)
+    // ════════════════════════════════════════
+    const unifiedBg = document.querySelector(".unified-bg-img");
+    if (unifiedBg) {
+        gsap.fromTo(unifiedBg, 
+            { yPercent: -5 },
+            { 
+                yPercent: 15,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: ".unified-bg-wrapper",
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: true
+                }
+            }
+        );
+    }
+
 });

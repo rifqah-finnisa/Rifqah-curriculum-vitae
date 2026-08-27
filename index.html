@@ -52,10 +52,15 @@
             </header>
         </section>
 
-        <section class="contact-section alternate-bg" style="position:relative;">
-            <div class="contact-photo-bg" aria-hidden="true">
-                <img src="assets/images/photo_cream.png" alt="" class="contact-bg-img" loading="lazy">
-            </div>
+        
+<!-- ✦ UNIFIED BACKGROUND WRAPPER for Contact + MC Events ✦ -->
+<div class="unified-bg-wrapper" style="position: relative; overflow: hidden;">
+    <div class="contact-photo-bg" aria-hidden="true" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; opacity: 0.12;">
+        <img src="assets/images/photo_cream.png" alt="" class="unified-bg-img" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: center top; mix-blend-mode: multiply;">
+    </div>
+
+<section class="contact-section" style="background: transparent; position: relative; z-index: 1;">
+            
             <div class="profile-showcase reveal">
                 <img src="assets/images/banner_linkedin.png" alt="Rifqah Finnisa Banner" class="profile-banner">
                 <div class="profile-info">
@@ -91,7 +96,7 @@
         </section>
 
         
-        <section class="experience" id="mc-events">
+        <section class="experience" id="mc-events" style="background: transparent; position: relative; z-index: 1;">
 
             <h2 class="section-title reveal-text">PENGALAMAN <br><span class="copper">MC & EVENT</span></h2>
             
@@ -167,12 +172,7 @@
                 </div>
             </div>
         </section>
-<div class="photo-editorial-img">
-                <img src="assets/images/photo_beach.png" alt="" loading="lazy">
-            </div>
-        </div>
-
-        </section>
+</div> <!-- End unified-bg-wrapper -->
 
         <!-- ✦ Professional Experience with Elegant Beach Background ✦ -->
         <section class="experience photo-bg-section" id="work">
