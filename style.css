@@ -1602,3 +1602,16 @@ img {
 .profile-avatar {
     animation: float-avatar 4s ease-in-out infinite;
 }
+
+/* Performance Optimizations */
+.reveal, .timeline-item, .section-title, .experience-gallery img, .magnetic-btn, .petal {
+    will-change: transform, opacity;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}
+.unified-bg-img, .photo-footer-bg {
+    will-change: transform;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}

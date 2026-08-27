@@ -32,7 +32,13 @@ document.addEventListener("DOMContentLoaded", () => {
     // ════════════════════════════════════════
     const sparkleColors = ["#E8C5BE","#C07E72","#F5D6CE","#D4A0A0","#FAEAE6"];
     let lastX = 0, lastY = 0;
+    let lastTime = 0;
+    let isMouseMoving = false;
     window.addEventListener("mousemove", (e) => {
+        const now = Date.now();
+        if (now - lastTime < 35) return; // limit to ~30fps for particle generation to save CPU
+        if (Math.abs(e.clientX - lastX) < 12 && Math.abs(e.clientY - lastY) < 12) return;
+        lastTime = now;
         if (Math.abs(e.clientX - lastX) < 8 && Math.abs(e.clientY - lastY) < 8) return;
         lastX = e.clientX; lastY = e.clientY;
         const dot = document.createElement("div");
@@ -50,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
             y: -(30+Math.random()*50), x:(Math.random()-0.5)*40,
             opacity:0, scale:0, duration:1 + Math.random()*0.5,
             rotation:Math.random()*360,
-            ease:"power2.out", onComplete:()=>dot.remove()
+            ease:"power2.out", force3D:true, onComplete:()=>dot.remove()
         });
     });
 
@@ -59,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // ════════════════════════════════════════
     const heroTl = gsap.timeline({ defaults:{ ease:"power4.out" } });
     heroTl
-        .from(".hero-image",            { scale:1.08, opacity:0, duration:1.8, ease:"power3.out" }, 0)
+        .from(".hero-image",            { scale:1.08, opacity:0, duration:1.8, ease:"power3.out", force3D:true }, 0)
         .from(".reveal-text:first-of-type", { y:120, opacity:0, duration:1.2 }, 0.2)
         .from(".reveal-text.outline",   { y:80, opacity:0, duration:1.2 }, 0.35)
         .from(".hero-roles",            { y:20, opacity:0, duration:0.8 }, 0.65)
@@ -92,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
             gsap.to(p, {
                 y:-(80+Math.random()*120), x:(Math.random()-0.5)*80,
                 rotation:Math.random()*360, opacity:0,
-                duration:1.5+Math.random(), ease:"power2.out",
+                duration:1.5+Math.random(), ease:"power2.out", force3D:true,
                 delay:Math.random()*0.4, onComplete:()=>p.remove()
             });
         }
@@ -140,7 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
         gsap.fromTo(meta,
             { x:-50, opacity:0 },
             {
-                x:0, opacity:1, duration:0.9, ease:"back.out(1.5)",
+                x:0, opacity:1, duration:0.9, ease:"back.out(1.5)", force3D:true,
                 scrollTrigger: {
                     trigger: item,
                     start: "top 84%",
@@ -152,7 +158,7 @@ document.addEventListener("DOMContentLoaded", () => {
         gsap.fromTo(content,
             { x:50, opacity:0 },
             {
-                x:0, opacity:1, duration:0.9, ease:"back.out(1.5)",
+                x:0, opacity:1, duration:0.9, ease:"back.out(1.5)", force3D:true,
                 delay: 0.08,
                 scrollTrigger: {
                     trigger: item,
@@ -191,10 +197,10 @@ document.addEventListener("DOMContentLoaded", () => {
             const rect = img.getBoundingClientRect();
             const x = (e.clientX - rect.left) / rect.width - 0.5;
             const y = (e.clientY - rect.top) / rect.height - 0.5;
-            gsap.to(img, { rotationY:x*12, rotationX:-y*12, scale:1.05, duration:0.4, ease:"power2.out", transformPerspective:600 });
+            gsap.to(img, { rotationY:x*12, rotationX:-y*12, scale:1.05, duration:0.4, ease:"power2.out", force3D:true, transformPerspective:600 });
         });
         img.addEventListener("mouseleave", () => {
-            gsap.to(img, { rotationY:0, rotationX:0, scale:1, duration:0.6, ease:"elastic.out(1,0.5)" });
+            gsap.to(img, { rotationY:0, rotationX:0, scale:1, duration:0.6, ease:"elastic.out(1,0.5)", force3D:true });
         });
     });
 
@@ -270,7 +276,7 @@ document.addEventListener("DOMContentLoaded", () => {
         gsap.fromTo(".magnetic-btn",
             { opacity:0, y:20 },
             {
-                opacity:1, y:0, duration:0.9, ease:"back.out(1.5)",
+                opacity:1, y:0, duration:0.9, ease:"back.out(1.5)", force3D:true,
                 scrollTrigger: {
                     trigger: ".footer",
                     start: "top 78%",
@@ -292,12 +298,12 @@ document.addEventListener("DOMContentLoaded", () => {
             const r = btn.getBoundingClientRect();
             const x = e.clientX - r.left - r.width/2;
             const y = e.clientY - r.top - r.height/2;
-            gsap.to(btn, { x:x*0.35, y:y*0.35, duration:0.5, ease:"power3.out" });
-            gsap.to(inner, { x:x*0.1, y:y*0.1, duration:0.5, ease:"power3.out" });
+            gsap.to(btn, { x:x*0.35, y:y*0.35, duration:0.5, ease:"power3.out", force3D:true });
+            gsap.to(inner, { x:x*0.1, y:y*0.1, duration:0.5, ease:"power3.out", force3D:true });
         });
         btn.addEventListener("mouseleave", () => {
-            gsap.to(btn, { x:0, y:0, duration:0.9, ease:"elastic.out(1,0.4)" });
-            gsap.to(inner, { x:0, y:0, duration:0.9, ease:"elastic.out(1,0.4)" });
+            gsap.to(btn, { x:0, y:0, duration:0.9, ease:"elastic.out(1,0.4)", force3D:true });
+            gsap.to(inner, { x:0, y:0, duration:0.9, ease:"elastic.out(1,0.4)", force3D:true });
         });
         btn.addEventListener("click", (e) => {
             ["💕","✨","🌸","💗","⭐","🌷","💖"].forEach((emoji, i) => {
@@ -308,7 +314,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 gsap.to(h, {
                     y:-(60+Math.random()*100), x:(Math.random()-0.5)*100,
                     opacity:0, rotation:(Math.random()-0.5)*60,
-                    duration:1+Math.random()*0.5, ease:"power2.out",
+                    duration:1+Math.random()*0.5, ease:"power2.out", force3D:true,
                     delay:i*0.06, onComplete:()=>h.remove()
                 });
             });
@@ -321,7 +327,7 @@ document.addEventListener("DOMContentLoaded", () => {
     gsap.fromTo(".skill-category",
         { y:30, opacity:0 },
         {
-            y:0, opacity:1, duration:0.8, ease:"back.out(1.5)", stagger:0.1,
+            y:0, opacity:1, duration:0.8, ease:"back.out(1.5)", force3D:true, stagger:0.1,
             scrollTrigger: {
                 trigger: ".skills-block",
                 start: "top 86%",
@@ -337,7 +343,7 @@ document.addEventListener("DOMContentLoaded", () => {
     gsap.fromTo(".edu-item",
         { x:-30, opacity:0 },
         {
-            x:0, opacity:1, duration:0.8, ease:"back.out(1.5)", stagger:0.15,
+            x:0, opacity:1, duration:0.8, ease:"back.out(1.5)", force3D:true, stagger:0.15,
             scrollTrigger: {
                 trigger: ".education-block",
                 start: "top 86%",
