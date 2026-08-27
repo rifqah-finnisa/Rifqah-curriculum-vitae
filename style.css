@@ -1272,13 +1272,7 @@ section + section::before,
     color: var(--text); /* ensure text is readable */
 }
 
-/* Override background colors for this section */
-.photo-bg-section .timeline-item {
-    background: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.6);
-}
+
 
 .photo-bg-wrapper {
     position: absolute;
@@ -1293,7 +1287,7 @@ section + section::before,
     height: 100%;
     object-fit: cover;
     object-position: center 30%;
-    filter: brightness(1.1) saturate(0.85); /* Lighten it up to keep it soft */
+    /* filter: none - let natural colors show through overlay */ /* Lighten it up to keep it soft */
 }
 
 .elegant-overlay {
@@ -1303,9 +1297,9 @@ section + section::before,
     background: 
         linear-gradient(to bottom, 
             rgba(242,240,235, 1) 0%, 
-            rgba(242,240,235, 0.7) 15%, 
-            rgba(242,240,235, 0.5) 50%, 
-            rgba(242,240,235, 0.7) 85%, 
+            rgba(242,240,235, 0.4) 15%, 
+            rgba(242,240,235, 0.25) 50%, 
+            rgba(242,240,235, 0.4) 85%, 
             rgba(242,240,235, 1) 100%
         );
 }
@@ -1429,13 +1423,7 @@ img {
     color: var(--text); /* ensure text is readable */
 }
 
-/* Override background colors for this section */
-.photo-bg-section .timeline-item {
-    background: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.6);
-}
+
 
 .photo-bg-wrapper {
     position: absolute;
@@ -1450,7 +1438,7 @@ img {
     height: 100%;
     object-fit: cover;
     object-position: center 30%;
-    filter: brightness(1.1) saturate(0.85); /* Lighten it up to keep it soft */
+    /* filter: none - let natural colors show through overlay */ /* Lighten it up to keep it soft */
 }
 
 .elegant-overlay {
@@ -1460,9 +1448,9 @@ img {
     background: 
         linear-gradient(to bottom, 
             rgba(242,240,235, 1) 0%, 
-            rgba(242,240,235, 0.7) 15%, 
-            rgba(242,240,235, 0.5) 50%, 
-            rgba(242,240,235, 0.7) 85%, 
+            rgba(242,240,235, 0.4) 15%, 
+            rgba(242,240,235, 0.25) 50%, 
+            rgba(242,240,235, 0.4) 85%, 
             rgba(242,240,235, 1) 100%
         );
 }
