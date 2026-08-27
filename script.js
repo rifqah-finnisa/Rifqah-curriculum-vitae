@@ -442,14 +442,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
-
-    // ════════════════════════════════════════
-    // EDUCATION PHOTO FADE
-    // ════════════════════════════════════════
-    const eduPhoto = document.querySelector(".education-photo");
-    if (eduPhoto) {
-        gsap.fromTo(eduPhoto,
-            { y: 60, opacity: 0, scale: 0.94 },
+,
             {
                 y: 0, opacity: 1, scale: 1,
                 duration: 1.4, ease: "power4.out",
