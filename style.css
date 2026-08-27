@@ -13,9 +13,9 @@
 
 :root {
     /* Warm Editorial Palette — Feminine & Breathable */
-    --bg:        #F8F4F0;       /* very warm cream, like old paper */
-    --bg-alt:    #F0EAE5;       /* dusty blush */
-    --bg-white:  #FDFAF7;       /* almost white, warm tint */
+    --bg:        #F2F0EC;       /* very warm cream, like old paper */
+    --bg-alt:    #EAE4DF;       /* dusty blush */
+    --bg-white:  #FAFAF8;       /* almost white, warm tint */
     --text:      #211B18;       /* deep dark espresso */
     --text-mid:  #6B5E58;       /* mid muted brown */
     --text-lite: #A8978F;       /* dusty warm gray */
@@ -61,10 +61,11 @@ svg.lucide {
     width: 100%;
     height: 100vh;
     min-height: 600px;
-    background: var(--bg);          /* warm cream base */
+    background: #F2F0EB;          /* very light warm near-white, exactly like reference */
     overflow: hidden;
     display: flex;
-    align-items: center;
+    align-items: flex-end;        /* push content to lower half like reference */
+    padding-bottom: 12vh;         /* sits in lower zone */
 }
 
 /* Photo — right side, fades LEFT into cream */
@@ -72,7 +73,7 @@ svg.lucide {
     position: absolute;
     right: 0;
     top: 0;
-    width: 58%;
+    width: 56%;
     height: 100%;
     z-index: 1;
 }
@@ -81,7 +82,7 @@ svg.lucide {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 60% 15%;  /* show face + hands at bottom */
+    object-position: 55% 15%;  /* show face + arms at bottom right */
     display: block;
 }
 
@@ -91,15 +92,15 @@ svg.lucide {
     inset: 0;
     background:
         linear-gradient(to right,
-            var(--bg) 0%,
-            var(--bg) 28%,
-            rgba(248,244,240,0.85) 44%,
-            rgba(248,244,240,0.3)  60%,
-            transparent 78%
+            #F2F0EB 0%,
+            #F2F0EB 30%,
+            rgba(242,240,235,0.88) 46%,
+            rgba(242,240,235,0.35) 62%,
+            transparent 80%
         ),
         linear-gradient(to top,
-            var(--bg) 0%,
-            transparent 18%
+            #F2F0EB 0%,
+            transparent 15%
         );
     z-index: 2;
 }
@@ -108,10 +109,9 @@ svg.lucide {
 .hero-content {
     position: relative;
     z-index: 3;
-    padding: 0 7%;
-    max-width: 52%;
-    /* shift content to lower-center like Image 2 */
-    margin-top: 4vh;
+    padding: 0 5% 0 5%;
+    max-width: 50%;
+    margin-top: 0;
 }
 
 /* Name typography — matching Image 2 exactly */
@@ -122,19 +122,19 @@ svg.lucide {
 
 h1.reveal-text {
     font-family: var(--ff-head);
-    font-size: clamp(3.5rem, 7.5vw, 7.5rem);  /* controlled, not overflowing */
+    font-size: clamp(3.2rem, 7vw, 7rem);  /* match reference exactly */
     font-weight: 700;
     letter-spacing: -0.03em;
     color: var(--text);
     display: block;
-    line-height: 1.0;
+    line-height: 0.95;
     margin: 0;
 }
 
-/* FINNISA — thin outline, same size */
+/* FINNISA — thin outline, same size as reference */
 h1.outline {
     color: transparent;
-    -webkit-text-stroke: 1.5px var(--text);
+    -webkit-text-stroke: 1.5px #8A8580;   /* softer gray outline, like reference */
     font-weight: 700;
     font-style: normal;
 }
@@ -163,18 +163,18 @@ h1.outline {
 /* Bio paragraph — small, light, readable */
 .hero-bio {
     font-family: var(--ff-body);
-    font-size: 1rem;
+    font-size: 0.92rem;
     font-weight: 300;
     color: var(--text-mid);
     line-height: 1.75;
-    max-width: 340px;
+    max-width: 320px;
 }
 
 /* Scroll indicator — bottom left */
 .scroll-indicator {
     position: absolute;
     bottom: 2.5rem;
-    left: 7%;
+    left: 5%;
     z-index: 3;
     display: flex;
     align-items: center;
