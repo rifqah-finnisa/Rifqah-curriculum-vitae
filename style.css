@@ -1267,6 +1267,8 @@ section + section::before,
    ELEGANT SECTION BACKGROUND (Beach Photo)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 .photo-bg-section {
+    background-color: var(--bg-alt);
+    background-color: var(--bg-alt);
     position: relative;
     overflow: hidden;
     color: var(--text); /* ensure text is readable */
@@ -1287,21 +1289,15 @@ section + section::before,
     height: 100%;
     object-fit: cover;
     object-position: center 30%;
-    /* filter: none - let natural colors show through overlay */ /* Lighten it up to keep it soft */
+    opacity: 0.15;
+    mix-blend-mode: multiply;
 }
 
 .elegant-overlay {
     position: absolute;
     inset: 0;
-    /* Soft white gradient overlay to make text readable but keep photo visible */
-    background: 
-        linear-gradient(to bottom, 
-            rgba(242,240,235, 1) 0%, 
-            rgba(242,240,235, 0.4) 15%, 
-            rgba(242,240,235, 0.25) 50%, 
-            rgba(242,240,235, 0.4) 85%, 
-            rgba(242,240,235, 1) 100%
-        );
+    background: linear-gradient(to bottom, var(--bg-alt) 0%, transparent 15%, transparent 85%, var(--bg-alt) 100%);
+    pointer-events: none;
 }
 
 .content-relative {
@@ -1418,6 +1414,8 @@ img {
    ELEGANT SECTION BACKGROUND (Beach Photo)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 .photo-bg-section {
+    background-color: var(--bg-alt);
+    background-color: var(--bg-alt);
     position: relative;
     overflow: hidden;
     color: var(--text); /* ensure text is readable */
@@ -1438,21 +1436,15 @@ img {
     height: 100%;
     object-fit: cover;
     object-position: center 30%;
-    /* filter: none - let natural colors show through overlay */ /* Lighten it up to keep it soft */
+    opacity: 0.15;
+    mix-blend-mode: multiply;
 }
 
 .elegant-overlay {
     position: absolute;
     inset: 0;
-    /* Soft white gradient overlay to make text readable but keep photo visible */
-    background: 
-        linear-gradient(to bottom, 
-            rgba(242,240,235, 1) 0%, 
-            rgba(242,240,235, 0.4) 15%, 
-            rgba(242,240,235, 0.25) 50%, 
-            rgba(242,240,235, 0.4) 85%, 
-            rgba(242,240,235, 1) 100%
-        );
+    background: linear-gradient(to bottom, var(--bg-alt) 0%, transparent 15%, transparent 85%, var(--bg-alt) 100%);
+    pointer-events: none;
 }
 
 .content-relative {
