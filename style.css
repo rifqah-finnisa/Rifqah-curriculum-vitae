@@ -1291,10 +1291,7 @@ section + section::before,
     pointer-events: none;
 }
 
-.content-relative {
-    position: relative;
-    z-index: 1;
-}
+
 
 
 
@@ -1429,10 +1426,7 @@ img {
     pointer-events: none;
 }
 
-.content-relative {
-    position: relative;
-    z-index: 1;
-}
+
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
    PRO PORTRAIT GRADIENT ACCENT (Footer)
