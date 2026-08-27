@@ -429,7 +429,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // ════════════════════════════════════════
     // BEACH BG PARALLAX (MC Events Section)
     // ════════════════════════════════════════
-    const beachBg = document.querySelector(".bg-parallax-img");
+    /* const beachBg = document.querySelector(".bg-parallax-img");
     if (beachBg) {
         gsap.to(beachBg, {
             yPercent: 20,
@@ -440,6 +440,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 end: "bottom top",
                 scrub: true
             }
+ */
         });
     }
 

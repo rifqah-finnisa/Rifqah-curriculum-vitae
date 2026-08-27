@@ -1268,29 +1268,20 @@ section + section::before,
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 .photo-bg-section {
     background-color: var(--bg-alt);
-    background-color: var(--bg-alt);
     position: relative;
-    overflow: hidden;
-    color: var(--text); /* ensure text is readable */
+    color: var(--text);
 }
 
 
 
-.photo-bg-wrapper {
-    position: absolute;
-    inset: -15%; /* Extra space for parallax */
-    width: 130%;
-    height: 130%;
-    z-index: 0;
-}
+.photo-bg-wrapper { /* position overridden by inline sticky */ }
 
 .bg-parallax-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 30%;
-    opacity: 0.22;
-    mix-blend-mode: multiply;
+    object-position: right 85%;
+    opacity: 0.5;
 }
 
 .elegant-overlay {
@@ -1415,29 +1406,20 @@ img {
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 .photo-bg-section {
     background-color: var(--bg-alt);
-    background-color: var(--bg-alt);
     position: relative;
-    overflow: hidden;
-    color: var(--text); /* ensure text is readable */
+    color: var(--text);
 }
 
 
 
-.photo-bg-wrapper {
-    position: absolute;
-    inset: -15%; /* Extra space for parallax */
-    width: 130%;
-    height: 130%;
-    z-index: 0;
-}
+.photo-bg-wrapper { /* position overridden by inline sticky */ }
 
 .bg-parallax-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 30%;
-    opacity: 0.22;
-    mix-blend-mode: multiply;
+    object-position: right 85%;
+    opacity: 0.5;
 }
 
 .elegant-overlay {
