@@ -429,20 +429,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // ════════════════════════════════════════
     // BEACH BG PARALLAX (MC Events Section)
     // ════════════════════════════════════════
-    /* const beachBg = document.querySelector(".bg-parallax-img");
-    if (beachBg) {
-        gsap.to(beachBg, {
-            yPercent: 20,
-            ease: "none",
-            scrollTrigger: {
-                trigger: ".photo-bg-section",
-                start: "top bottom",
-                end: "bottom top",
-                scrub: true
-            }
- */
-        });
-    }
+    
 
     // ════════════════════════════════════════
     // EDUCATION PHOTO FADE
