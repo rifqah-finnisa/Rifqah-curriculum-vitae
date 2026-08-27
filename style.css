@@ -1295,23 +1295,19 @@ section + section::before,
 }
 
 /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-   SMOOTHNESS — GPU hints for all animated elements
+   SMOOTHNESS — GPU hints (text/layout only, NOT photos)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-.hero-image,
 .hero-content,
 .timeline-item,
-.profile-showcase,
-.experience-gallery img,
 .section-title .word {
     will-change: transform, opacity;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
 }
 
-/* Smooth image rendering across all browsers */
+/* Photos: let browser choose optimal rendering */
 img {
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
+    image-rendering: auto;
 }
 
 /* ── Photo break mobile ── */
