@@ -78,7 +78,7 @@ h1, h2, h3, h4 {
     position: absolute;
     top: 0;
     right: 0;
-    width: 65%;
+    width: 60%;
     height: 100%;
     z-index: 0;
 }
@@ -87,7 +87,7 @@ h1, h2, h3, h4 {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: top center;
+    object-position: center center;
 }
 
 .overlay-gradient {
@@ -96,76 +96,80 @@ h1, h2, h3, h4 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, var(--color-bg) 0%, rgba(250, 248, 245, 0.9) 40%, rgba(250, 248, 245, 0) 100%),
-                linear-gradient(0deg, var(--color-bg) 0%, rgba(250, 248, 245, 0) 20%);
+    background: linear-gradient(90deg, var(--color-bg) 0%, rgba(250, 248, 245, 0.95) 45%, rgba(250, 248, 245, 0) 100%),
+                linear-gradient(0deg, var(--color-bg) 0%, rgba(250, 248, 245, 0) 15%);
 }
 
 .hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 1;
     max-width: 600px;
+    padding-top: 5rem;
 }
 
 .title-wrapper {
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: 1rem;
 }
 
-.hero h1 {
-    font-size: clamp(4rem, 10vw, 9rem);
-    line-height: 0.85;
-    letter-spacing: -0.04em;
+h1 {
+    font-size: 6rem;
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    color: var(--color-text-primary);
     text-transform: uppercase;
 }
 
-.hero h1.outline {
+h1.outline {
     color: transparent;
-    -webkit-text-stroke: 1.5px var(--color-text-primary);
+    -webkit-text-stroke: 1px var(--color-text-primary);
+    font-weight: 400;
 }
 
 .hero-roles {
     display: flex;
     align-items: center;
     gap: 1rem;
-    margin-bottom: var(--spacing-md);
-    font-family: var(--font-display);
-    font-size: 1rem;
+    font-size: 0.85rem;
     letter-spacing: 0.15em;
     color: var(--color-accent);
-    font-weight: 600;
+    margin-bottom: 2rem;
+    font-weight: 500;
+    text-transform: uppercase;
 }
 
 .hero-roles .dot {
-    font-size: 0.8rem;
-    opacity: 0.5;
+    font-size: 0.5rem;
 }
 
 .hero-bio {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     color: var(--color-text-secondary);
     max-width: 450px;
-    font-weight: 300;
+    line-height: 1.6;
 }
 
-/* Scroll indicator */
+/* --- Scroll Indicator --- */
 .scroll-indicator {
     position: absolute;
-    bottom: var(--spacing-md);
+    bottom: 3rem;
     left: 5%;
     display: flex;
     align-items: center;
     gap: 1rem;
-    font-family: var(--font-display);
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     letter-spacing: 0.2em;
     color: var(--color-text-tertiary);
+    z-index: 2;
 }
+
 .mouse {
     width: 20px;
     height: 30px;
-    border: 1.5px solid var(--color-text-tertiary);
-    border-radius: 15px;
+    border: 1px solid var(--color-text-tertiary);
+    border-radius: 10px;
     position: relative;
 }
+
 .mouse::before {
     content: '';
     position: absolute;
@@ -173,58 +177,85 @@ h1, h2, h3, h4 {
     left: 50%;
     transform: translateX(-50%);
     width: 2px;
-    height: 6px;
-    background: var(--color-text-tertiary);
+    height: 4px;
+    background-color: var(--color-text-tertiary);
     border-radius: 2px;
-    animation: scroll-anim 1.5s infinite;
-}
-@keyframes scroll-anim {
-    0% { transform: translate(-50%, 0); opacity: 1; }
-    100% { transform: translate(-50%, 8px); opacity: 0; }
+    animation: scroll 1.5s infinite;
 }
 
-/* --- Contact & Profile Showcase --- */
-.contact-section {
+@keyframes scroll {
+    0% { transform: translate(-50%, 0); opacity: 1; }
+    100% { transform: translate(-50%, 10px); opacity: 0; }
+}
+
+/* --- Global Sections --- */
+section {
     padding: var(--spacing-xl) 5%;
-    background-color: var(--color-bg);
+    position: relative;
+}
+
+.alternate-bg {
+    background-color: var(--color-bg-alt);
+}
+
+.section-title {
+    font-size: 3rem;
+    line-height: 1.1;
+    margin-bottom: var(--spacing-lg);
+    text-transform: uppercase;
+}
+
+/* --- Contact & Profile --- */
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
 }
 
 .profile-showcase {
-    max-width: 1000px;
-    margin: 0 auto var(--spacing-lg);
     position: relative;
     border-radius: var(--radius-lg);
     overflow: hidden;
     background: #fff;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    margin-bottom: var(--spacing-md);
+    transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out);
 }
+
+.profile-showcase:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(196, 140, 126, 0.1);
+}
+
 .profile-banner {
     width: 100%;
-    height: 200px;
+    height: 250px;
     object-fit: cover;
-    object-position: right center;
 }
+
 .profile-info {
+    position: relative;
     padding: 0 var(--spacing-md) var(--spacing-md);
     display: flex;
-    gap: var(--spacing-md);
-    align-items: flex-end;
-    margin-top: -60px; /* Overlap with banner */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: -60px;
 }
+
 .profile-avatar {
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     object-fit: cover;
     border: 4px solid #fff;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    background: #fff;
-    z-index: 2;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    margin-bottom: var(--spacing-sm);
+    background-color: #fff;
 }
+
 .profile-text {
-    padding-bottom: 10px;
-}
-.profile-text p {
+    max-width: 600px;
     color: var(--color-text-secondary);
     font-size: 1.05rem;
     max-width: 500px;
