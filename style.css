@@ -756,41 +756,59 @@ section { padding: 7rem 7%; }
     .contact-section { padding: 4rem 5%; }
     .footer { padding: 5rem 5% 3rem; }
 
-    /* ── Hero — Mobile: photo top, text bottom ── */
+    /* ── Hero — Mobile: column layout, photo on top, text below ── */
     .hero {
-        align-items: flex-end;         /* text anchored to bottom */
-        padding-bottom: 7vh;
+        flex-direction: column;      /* stack photo then text */
+        align-items: stretch;
+        height: auto;
         min-height: 100svh;
+        padding-bottom: 0;
         background: #F2F0EB;
     }
+    /* Photo becomes a normal block element, not absolute */
     .hero-image-container {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 68%;               /* photo fills top 68% of screen */
-        opacity: 1;                /* FULLY visible */
+        position: relative !important;
+        width: 100% !important;
+        height: 56vw !important;     /* proportional: slightly over half-screen width */
+        min-height: 240px;
+        opacity: 1 !important;
+        right: auto !important;
+        left: auto !important;
+        top: auto !important;
+        flex-shrink: 0;
+        overflow: hidden;
     }
     .hero-image {
-        object-position: center 8%;  /* show face centered at top */
+        object-position: center 12%;   /* face visible */
+        height: 100%;
+        width: 100%;
     }
-    /* Gradient fades photo DOWN into cream background */
+    /* Fade bottom of photo into cream */
+    .hero-image-container::after {
+        content: '';
+        position: absolute;
+        bottom: 0; left: 0; right: 0;
+        height: 55%;
+        background: linear-gradient(to bottom,
+            transparent 0%,
+            rgba(242,240,235,0.6) 50%,
+            #F2F0EB 100%
+        );
+        pointer-events: none;
+    }
+    /* Hide the separate overlay div on mobile */
     .overlay-gradient {
-        background:
-            linear-gradient(to bottom,
-                transparent 0%,
-                transparent 30%,
-                rgba(242,240,235,0.55) 50%,
-                rgba(242,240,235,0.90) 65%,
-                #F2F0EB 80%
-            );
+        display: none !important;
     }
+    /* Text section sits below photo, natural flow */
     .hero-content {
-        position: relative;
-        z-index: 3;
+        position: relative !important;
+        z-index: 2;
         max-width: 100%;
-        padding: 0 5%;
-        margin-top: 0;
+        padding: 0.5rem 5% 2rem;
+        margin-top: -3rem;             /* slight overlap with photo fade */
+        background: transparent;
+        flex: 1;
     }
     h1.reveal-text {
         font-size: clamp(2.8rem, 14vw, 4.5rem);
@@ -807,7 +825,14 @@ section { padding: 7rem 7%; }
         max-width: 100%;
     }
     .title-wrapper { margin-bottom: 1.1rem; }
-    .scroll-indicator { left: 5%; bottom: 1.5rem; }
+    /* Scroll indicator inline at bottom */
+    .scroll-indicator {
+        position: relative !important;
+        bottom: auto !important;
+        left: auto !important;
+        margin-top: 2rem;
+        padding-bottom: 1rem;
+    }
 
     /* ── Section titles ── */
     .section-title {
