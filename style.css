@@ -517,3 +517,49 @@ section {
     object-fit: cover;
     box-shadow: 0 20px 40px rgba(0,0,0,0.08);
 }
+
+
+/* --- Timeline Background Blends --- */
+.timeline-item {
+    position: relative;
+    z-index: 1;
+}
+.timeline-image-bg {
+    position: absolute;
+    top: 0;
+    right: -5%;
+    width: 60%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.7;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent, black 30%);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 30%);
+}
+.timeline-image-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: grayscale(20%) contrast(110%);
+}
+.overlay-gradient-timeline {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-bg) 0%, rgba(250,248,245,0.8) 30%, transparent 100%),
+                linear-gradient(0deg, var(--color-bg) 0%, transparent 20%),
+                linear-gradient(180deg, var(--color-bg) 0%, transparent 20%);
+}
+.alternate-bg .overlay-gradient-timeline {
+    background: linear-gradient(90deg, var(--color-bg-alt) 0%, rgba(243,235,230,0.8) 30%, transparent 100%),
+                linear-gradient(0deg, var(--color-bg-alt) 0%, transparent 20%),
+                linear-gradient(180deg, var(--color-bg-alt) 0%, transparent 20%);
+}
+.timeline-meta, .timeline-content {
+    position: relative;
+    z-index: 2;
+}
