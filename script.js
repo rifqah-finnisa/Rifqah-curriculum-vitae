@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // ════════════════════════════════════════
     // 2. CURSOR SPARKLE TRAIL
     // ════════════════════════════════════════
-    const sparkleColors = ["#E8C5BE","#C07E72","#F5D6CE","#D4A0A0","#FAEAE6"];
+    const sparkleColors = ["#B5603A","#D4896A","#E8C5B0","#1A1714","#8C8480"];
     let lastX = 0, lastY = 0;
     let lastTime = 0;
     let isMouseMoving = false;
